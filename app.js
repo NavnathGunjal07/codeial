@@ -5,6 +5,12 @@ const app = express();
 
 
 
+//use express router
+app.use('/',require('./routes'))
+
+
+
+
 
 
 
