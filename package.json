@@ -1,20 +1,26 @@
 {
-  "name": "codeil",
+  "name": "codeial",
   "version": "1.0.0",
-  "description": "Social meida web application using node js",
-  "main": "index.js",
+  "description": "My all social media web application",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start":"nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NavnathGunjal07/Codeial.git"
+  },
   "keywords": [
-    "social",
-    "social",
-    "media",
-    "codeil"
+    "social-",
+    "media"
   ],
   "author": "Navnath Gunjal",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NavnathGunjal07/Codeil/issues"
+  },
+  "homepage": "https://github.com/NavnathGunjal07/Codeil#readme",
   "dependencies": {
     "express": "^4.17.2"
   }
