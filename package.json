@@ -4,12 +4,12 @@
   "description": "My all social media web application",
   "main": "app.js",
   "scripts": {
-    "start":"nodemon app.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NavnathGunjal07/codeial.git"
+    "url": "git+https://github.com/NavnathGunjal07/Codeial.git"
   },
   "keywords": [
     "social-",
@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/NavnathGunjal07/Codeil#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^6.1.4"
   }
 }
