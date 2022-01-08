@@ -1,0 +1,28 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="/css/sign_up.css" rel="stylesheet">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="/users/create" method="post">
+        <h3>Sign Up Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" name = "name" id="name" placeholder="Enter Username" id="name">
+        <label for="Email">Email</label>
+        <input type="email" name = "email" id="email" placeholder="Enter Email" id="email">
+
+        <label for="password">Password</label>
+        <input type="password" name = "password" placeholder="Enter Password" id="password">
+        <label for="confirm_password">Password</label>
+        <input type="password" name = "confirm_password" placeholder="Confirm Password" id="confirm_password">
+
+        <button type="submit">Sign In</button>
+        <span id = "sign-in">Already have account?&nbsp;<a href="/users/sign-in">Sign In.</a></span>
+        <!-- <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div> -->
+    </form>

@@ -1,7 +1,10 @@
 module.exports.home = function(req, res){
-    console.log(req.cookies);
-    // res.cookie('something',25);
+    if(!req.isAuthenticated()){
+        return res.redirect('/users/sign-in')
+    }
     return res.render('home.ejs',{
-        title: 'Codeial | Home'
+        title: 'Codeial | Home',
+        header:true,
+        footer:true
     });
 }
