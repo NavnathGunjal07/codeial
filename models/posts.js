@@ -10,10 +10,15 @@ const postSchema = new mongoose.Schema({
         type:  mongoose.Schema.Types.ObjectId,
         ref: 'user'
 
-    }
+    },
+    //include the array of all comments in this post schema for faster reload
+    comments:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'comment'
+    }]
 },{
     timestamps: true
 });
 
-const Post = mongoose.model('Post', postSchema);
+const Post = mongoose.model('post', postSchema);
 module.exports = Post;
