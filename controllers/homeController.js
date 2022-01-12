@@ -1,41 +1,30 @@
 const Post = require('../models/posts');
-module.exports.home = function(req, res){
 const User = require('../models/user');
 
-
-
-    // Post.find({},function(err,posts){
-    //     return res.render('home.ejs',{
-    //         title: 'Codeial | Home',
-    //         header:true,
-    //         footer:true,
-    //         posts:posts
-    //     });
-    // });
+module.exports.home = async function(req, res){
 
     //Populate the user of each posts
-    Post.find({})
-    .populate('user')
-    .populate({
-        path:'comments',
-        populate:{
-            path:'user'
-        }
-    })
-    .exec(function (err, posts) {
-        User.find({},function (err, user) {
+    try{
+        let posts =  await Post.find({})
+        .populate('user')
+        .populate({
+            path:'comments',
+            populate:{
+                path:'user'
+            }
+        })
+        let users = await User.find({});
+    
+        
             return res.render('home.ejs',{
                 title: 'Codeial | Home',
                 header:true,
                 footer:true,
                 posts:posts,
-                all_users:user
+                all_users:users
             });
-        });
-    if (err){
-        console.log("Error in populating user homecontroller",err);
+    }catch(err){
+        console.log('Error in populating posts',err);
         return;
-    } 
-    
-  });
+    }
 }
