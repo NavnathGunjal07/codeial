@@ -1,36 +1,40 @@
 const Post = require('../models/posts');
-const Comment  = require('../models/comment');
+const Comment = require('../models/comment');
 
 
 module.exports.create = async function(req, res){
   try{
-    console.log('post created by ajax',req.body);
     let post = await Post.create({
         content: req.body.content,
-        user: req.user._id
-        
-    })
-    console.log(req.xhr);
+        user: req.user._id 
+    });
+   
     if(req.xhr){
-        console.log('in if xhr');     
+        //populating user when post added by ajax
+       // console.log(post);
+        //post = await post.populate('user', 'name').execPopulate();
+
+       let post =await Post.findOne({user:req.user._id}).populate('user').exec();
+   
         return res.status(200).json({
-            data:{
-                post:post
+            data: {
+                post: post
             },
-            message:'post created'
+            message: "Post created!"
         });  
     }
     
     req.flash('success','Post published!');
     return res.redirect('back');
   }catch(err){
-      req.flash('error',err);
-      return res.redirect('back');
+      req.flash('error', err);
+      console.log(err);
+    return res.redirect('back');
   }
   
 }
 
-module.exports.destroy = async function(req,res){
+module.exports.destroy = async function(req, res){
     try{
         let post = await Post.findById(req.params.id);
     if(post.user==req.user.id)

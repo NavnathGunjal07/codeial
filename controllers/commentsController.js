@@ -14,6 +14,17 @@ module.exports.create = async function(req, res){
             });
             post.comments.push(comment);
             post.save();
+            if(req.xhr){    
+                //comment = await comment.populate('user', 'name').execPopulate();
+                let comment =await Post.findOne({user:req.user._id}).populate('user').exec();
+                return res.status(200).json({
+                    data: {
+                        comment: comment
+                    },
+                    message: "Post created!"
+                });  
+            }
+            
             req.flash('success','Added new comment');
             res.redirect('/');
         }
@@ -30,17 +41,23 @@ module.exports.destroy = async function(req, res){
             let postId = comment.post;
             comment.remove();
             let post = Post.findByIdAndUpdate(postId,{$pull:{comments:req.params.id}});
-            req.flash('success','Deleted comment successfully');
+            if(req.xhr)
+            {
+                return res.status(200).json({
+                    data: {
+                        comment_id: req.params.id
+                    },
+                    message: "comment deleted"
+                });
+            }
+            req.flash('success', 'Comment deleted!');
+            return res.redirect('back');
+        }else{
+            req.flash('error', 'Unauthorized');
             return res.redirect('back');
         }
-        else
-        {
-            req.flash('error','You cannot delete this comment');
-            return res.redirect('back');
-        }
-    
   }catch(err){
-    req.flash('error',err);
+    req.flash('error', err);
     return;
 }
 }
