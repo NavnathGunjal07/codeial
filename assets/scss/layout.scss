@@ -1,8 +1,20 @@
 body{
     margin: 0;
     /* text-align: center; */
-
+    .main-container{
+        display:flex;
+        flex-direction: column;
+    }
     #layout-main{
-        height: 100%;
+       height: 100%;
+       min-height: 90vh;
+    }
+    #footer-container{
+       // margin-top:90%;
+    }
+    #header-container{
+       // position:fixed;
+        width: 100%;
+       // display: block;
     }
 }

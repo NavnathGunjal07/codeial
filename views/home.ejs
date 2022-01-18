@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/home.css">
 <div id="home-container">
-    <section id="feed-posts">
+    <div id="feed-posts">
         <h4>Posts</h4>
         <% if(locals.user){ %>
         <form action="/posts/create" id="new-post-form" method="POST">
@@ -15,16 +15,16 @@
                 <%}%>
             </ul>
         </div>
-    </section>
+    </div>
     
-    <section id="user-friends">
+    <div id="user-friends">
         <h4>Friends</h4>
         <% for(u of all_users){%> 
                 <p>
                 <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
             </p>
         <% } %> 
-    </section>
+        </div>
 </div>
 <script src = "/js/home_posts_comments.js"></script>
 <script src="/js/home_posts.js"></script>

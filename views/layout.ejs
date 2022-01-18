@@ -16,18 +16,26 @@
     </head>
 
     <body>
-        <% if(header){ %> 
-        <%- include('_header'); %>
-        <% } %> 
+
+        <div class="main-container">
+            <% if(header){ %> 
+                <div id="header-container">
+                    <%- include('_header'); %>
+                </div>
+               
+                <% } %> 
+                
+                <main id="layout-main">
+                    <%- body %>
+                </main>
         
-        <main id="layout-main">
-            <%- body %>
-
-        </main>
-
-        <% if(footer){ %> 
-        <%- include('_footer'); %>
-        <% } %> 
+                <% if(footer){ %> 
+                    <div id="footer-container">
+                        <%- include('_footer'); %>
+                    </div>
+               
+                <% } %>
+        </div> 
         <%- script %>
         <script>
            <%if(flash.success && flash.success.length > 0){ %>

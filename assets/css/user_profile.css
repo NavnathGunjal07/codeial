@@ -1,2 +1,47 @@
 body {
   background-color: lightblue; }
+  body #profile-main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; }
+    body #profile-main-container .user-profile-details {
+      margin-top: 2%;
+      width: 70%;
+      margin-left: 20%;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 3%; }
+      body #profile-main-container .user-profile-details #profile-image-contianer {
+        margin-top: 1%;
+        height: 90%;
+        width: 25%;
+        border-radius: 50%;
+        overflow: hidden; }
+        body #profile-main-container .user-profile-details #profile-image-contianer img {
+          width: 100%;
+          height: 100%; }
+      body #profile-main-container .user-profile-details #profile-details {
+        margin-top: 1%;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        justify-content: space-around;
+        width: 60%; }
+        body #profile-main-container .user-profile-details #profile-details #name-and-edit {
+          height: 30%; }
+          body #profile-main-container .user-profile-details #profile-details #name-and-edit #user-name {
+            padding-top: 4%;
+            font-family: Century Gothic;
+            display: inline-block; }
+          body #profile-main-container .user-profile-details #profile-details #name-and-edit #edit-button {
+            margin-left: 5%;
+            padding-top: 4%;
+            display: inline-block; }
+            body #profile-main-container .user-profile-details #profile-details #name-and-edit #edit-button button {
+              border-radius: 10px solid black; }
+        body #profile-main-container .user-profile-details #profile-details #bio {
+          height: 65%; }
+    body #profile-main-container .user-profile-user-posts {
+      width: 70%;
+      margin-left: 20%;
+      border-top: 1px solid black; }

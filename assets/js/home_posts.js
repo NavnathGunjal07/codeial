@@ -91,7 +91,7 @@ let convertPostsToAjax = function(){
 
         // get the post's id by splitting the id attribute
         let postId = self.prop('id').split("-")[1]
-        new PostComments(postId);
+       new PostComments(postId);
     });
 }
 

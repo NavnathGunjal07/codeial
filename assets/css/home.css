@@ -2,10 +2,14 @@
   display: flex;
   height: 100%; }
   #home-container #feed-posts {
-    width: 70%;
-    padding: 10px; }
-  #home-container #user-freinds {
-    width: 30%;
-    height: 100%;
+    margin-left: 12%;
+    width: 60%;
+    min-height: 90vh;
+    display: inline-block;
     padding: 10px;
-    border-left: 1px solid lightgrey; }
+    border-left: 1px solid grey; }
+  #home-container #user-friends {
+    width: 30%;
+    display: inline-block;
+    padding: 10px;
+    border-left: 1px solid grey; }
