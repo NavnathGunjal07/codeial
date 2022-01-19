@@ -1,4 +1,4 @@
-const Post = require('../../../models/post');
+const Post = require('../../../models/posts');
 const Comment = require('../../../models/comment');
 module.exports.index = async function(req, res){
 
