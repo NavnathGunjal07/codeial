@@ -40,7 +40,7 @@ body{
     bottom: -80px;
 }
 form{
-    height: 620px;
+    height: 610px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -69,7 +69,7 @@ form h3{
 
 label{
     display: block;
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 16px;
     font-weight: 500;
 }
@@ -80,7 +80,7 @@ input{
     background-color: rgba(255,255,255,0.07);
     border-radius: 3px;
     padding: 0 10px;
-    margin-top: 8px;
+    margin-top: 5px;
     font-size: 14px;
     font-weight: 300;
 }
@@ -100,12 +100,13 @@ button{
     cursor: pointer;
 }
 .social{
-  margin-top: 30px;
+  margin-top: 2px;
+
   display: flex;
 }
 .social div{
   background: red;
-  width: 150px;
+  width: 325px;
   border-radius: 3px;
   padding: 5px 10px 10px 5px;
   background-color: rgba(255,255,255,0.27);
@@ -123,7 +124,7 @@ button{
 }
 
 #sign-in{
-    // margin-top: 20px;
+    
     a{
         text-decoration: none;
         color: rgb(49, 6, 245);
