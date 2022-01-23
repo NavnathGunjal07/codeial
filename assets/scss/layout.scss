@@ -7,13 +7,14 @@ body{
     }
     #layout-main{
        height: 100%;
+       margin-top:5%;
        min-height: 90vh;
     }
     #footer-container{
        // margin-top:90%;
     }
     #header-container{
-       // position:fixed;
+       position:fixed;
         width: 100%;
        // display: block;
     }

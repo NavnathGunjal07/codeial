@@ -6,6 +6,8 @@ body {
     flex-direction: column; }
   body #layout-main {
     height: 100%;
+    margin-top: 5%;
     min-height: 90vh; }
   body #header-container {
+    position: fixed;
     width: 100%; }
