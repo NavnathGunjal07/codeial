@@ -2,18 +2,30 @@ const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
 
-module.exports.profile = function(req, res){
-    // if(!req.user.avatar==""){
-    //      req.user.avatar =  User.avatarPath+'/'+"user_default.png";
-    //  }
-    User.findById(req.params.id,function(err,user){
-        return res.render('user_profile', {
-            title: 'User Profile',
-            header:true,
-            footer:true,
-            profile_user:user
-        })
-    })
+
+
+module.exports.profile = async function(req, res){
+
+    try{
+        let user = await User.findById(req.params.id);
+        let isfriendOrNot = await User.findById(req.user.id);
+    
+       const friendOrNot = user.friendships.find((item) => item == req.user.id);
+        // if(!req.user.avatar==""){
+        //      req.user.avatar =  User.avatarPath+'/'+"user_default.png";
+        //  }
+        User.findById(req.params.id,function(err,user){
+            return res.render('user_profile', {
+                title: 'User Profile',
+                header:true,
+                footer:true,
+                profile_user:user,
+                friendOrNot: friendOrNot
+            })
+        });   
+    }catch(err){
+        console.log("Error in rendering profile", err);
+    }
     
 }
 

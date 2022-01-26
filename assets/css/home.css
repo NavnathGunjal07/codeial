@@ -7,9 +7,13 @@
     min-height: 90vh;
     display: inline-block;
     padding: 10px;
-    border-left: 1px solid grey; }
-  #home-container #user-friends {
+    border-left: 1px solid grey;
+    overflow-y: scroll; }
+  #home-container #user-friends-section {
     width: 30%;
     display: inline-block;
-    padding: 10px;
-    border-left: 1px solid grey; }
+    display: flex;
+    flex-direction: column;
+    padding: 10px; }
+    #home-container #user-friends-section .user-freinds {
+      background-color: yellow; }

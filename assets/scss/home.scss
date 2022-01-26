@@ -11,13 +11,19 @@
         display: inline-block;
         padding:10px;
         border-left:1px solid grey;
+        overflow-y: scroll;
         
     }
-    #user-friends{
+    #user-friends-section{
         width:30%;
         display: inline-block;
+        display: flex;
+        flex-direction: column;
         padding:10px;
-        border-left:1px solid grey;
+        // border:1px solid grey;
+        .user-freinds{
+            background-color: yellow;
+        }
         
     }
 }

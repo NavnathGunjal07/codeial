@@ -17,14 +17,26 @@
         </div>
     </div>
     
-    <div id="user-friends">
-        <h4>Friends</h4>
-        <% for(u of all_users){%> 
-                <p>
-                <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-            </p>
-        <% } %> 
+    <div id="user-friends-section">
+        <div class="user-freinds">
+            <h2>Friends list</h2>
+   
+            <% for(u of addedfriends) {%>
+                <!-- TODO need to ad in seperate page -->       
+                <a href="/users/profile/<%= u.id %>"><%= u.name %></a> <br>
+                
+            <% } %>
         </div>
+         <div class="user-freinds">
+            <h4>All Users</h4>
+            <% for(u of all_users){%> 
+                    <p>
+                    <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+                </p>
+            <% } %> 
+         </div>
+   </div>
+        
 </div>
 <script src = "/js/home_posts_comments.js"></script>
 <script src="/js/home_posts.js"></script>

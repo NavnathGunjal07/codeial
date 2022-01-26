@@ -18,14 +18,25 @@ module.exports.home = async function(req, res){
             }
         }).populate('likes');
         let users = await User.find({});
-    
+        friendshipuser=[];
+        if(req.user){
+            let listForCurrentUser = await User.findById(req.user.id);
+            for(let uid of listForCurrentUser.friendships){
+                let friendsuser = await User.findById(uid);
+                friendshipuser.push(friendsuser)
+            }
+        }else{
+            friendshipuser=[]
+        
+        }
         
             return res.render('home.ejs',{
                 title: 'Codeial | Home',
                 header:true,
                 footer:true,
                 posts:posts,
-                all_users:users
+                all_users:users,
+                addedfriends: friendshipuser
             });
     }catch(err){
         console.log('Error in populating posts',err);

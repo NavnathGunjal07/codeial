@@ -13,7 +13,22 @@
                 <div id="edit-button">
                     <a href="user_profile_edit_details.ejs"><button id="edit-btn">Edit Profile</button></a>
                 </div>
-                <%}%>
+                <%}else{%>
+                    <p>
+                        <% if(friendOrNot) { %>
+                            <form action="/friendship/addfriend" method="post">
+                                <input type="hidden" name="friendUserId" value="<%= profile_user.id %>">
+                                <input type="submit" value="Unfollow">
+                            </form>
+                        <% } else {%> 
+                        <form action="/friendship/addfriend" method="post">
+                            <input type="hidden" name="friendUserId" value="<%= profile_user.id %>">
+                            <input type="submit" value="Follow">
+                        </form>
+                        <% } %>
+                    </p>
+                    <% } %> 
+
             </div>
             <div id="bio">
                 
