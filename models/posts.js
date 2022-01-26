@@ -8,13 +8,13 @@ const postSchema = new mongoose.Schema({
     },
     user: {
         type:  mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'User'
 
     },
     //include the array of all comments in this post schema for faster reload
     comments:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref:'comment'
+        ref:'Comment'
     }],
     likes: [
         {
@@ -26,5 +26,5 @@ const postSchema = new mongoose.Schema({
     timestamps: true
 });
 
-const Post = mongoose.model('post', postSchema);
+const Post = mongoose.model('Post', postSchema);
 module.exports = Post;

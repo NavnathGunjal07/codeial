@@ -8,13 +8,13 @@ const commentSchema = new mongoose.Schema({
     //comment belongs to a user
     user:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'user'
+        ref:'User'
     }
     ,
     //user can comment under the posts
     post:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'post'
+        ref:'Post'
     },
     likes: [
         {
@@ -27,5 +27,5 @@ const commentSchema = new mongoose.Schema({
 });
 
 
-const Comment = mongoose.model('comment',commentSchema);
+const Comment = mongoose.model('Comment',commentSchema);
 module.exports = Comment;
