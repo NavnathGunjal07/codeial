@@ -40,7 +40,7 @@ module.exports.create = async function(req, res){
             }
             
             req.flash('success','Added new comment');
-            res.redirect('/');
+            res.redirect('back');
         }
    }catch(err){
         req.flash('error',err);

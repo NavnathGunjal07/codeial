@@ -36,7 +36,8 @@ module.exports.home = async function(req, res){
                 footer:true,
                 posts:posts,
                 all_users:users,
-                addedfriends: friendshipuser
+                addedfriends: friendshipuser,
+                homePage:true
             });
     }catch(err){
         console.log('Error in populating posts',err);

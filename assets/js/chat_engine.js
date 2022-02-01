@@ -1,3 +1,4 @@
+// import * as moment from 'moment';
 class ChatEngine{
     constructor(chatBoxId, userEmail){
         this.chatBox = $(`#${chatBoxId}`);
@@ -61,7 +62,7 @@ class ChatEngine{
             }));
 
             newMessage.append($('<sub>', {
-                'html': data.user_email
+                'html': `${data.user_email} ${moment().format('h:mm a')}`
             }));
 
             newMessage.addClass(messageType);
@@ -70,3 +71,17 @@ class ChatEngine{
         })
     }
 }
+
+document.getElementById("close-chat").style.display = "none";
+document.getElementById("user-chat-box").style.display = "none";
+function openForm() {
+    document.getElementById("user-chat-box").style.display = "block";
+    document.getElementById("close-chat").style.display = "block";
+    document.getElementById("open-chat").style.display = "none";
+  }
+  
+  function closeForm() {
+    document.getElementById("user-chat-box").style.display = "none";
+    document.getElementById("open-chat").style.display = "block";
+    document.getElementById("close-chat").style.display = "none";
+  }

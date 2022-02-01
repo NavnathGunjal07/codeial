@@ -1,15 +1,20 @@
-<li id="post-<%= post._id %>">
+
+<li class = "home-posts-li" id="post-<%= post._id %>">
     <p>
-     <% if (locals.user && locals.user.id == post.user.id){ %> 
-         <small>
-             <a class="delete-post-button"  href="/posts/destroy/<%= post.id %>">X</a>
-         </small>
-         <% } %>
-     <%= post.content %>
-     <br>
-     <small>
-         <%= post.user.name %>
-    </small>
+        <div id="user-profile-pic-posts">
+            <img src="<%=post.user.avatar%>" alt="<%=post.user.name%>">
+        </div>  
+        <small>
+            <%= post.user.name %>
+       </small>
+       <% if (locals.user && locals.user.id == post.user.id){ %> 
+        <small>
+            <a class="delete-post-button"  href="/posts/destroy/<%= post.id %>">Delete Post</a>
+        </small>
+        <% } %>
+        <br>
+       <%= post.content %>
+
     <small>
         <% if (locals.user){ %>
             <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
@@ -20,21 +25,25 @@
         <% } %>
     </small>
     </p>
-    <div class="post-comments">
-        <% if(locals.user){ %>
-         <form id="post-<%= post._id %>-comments-form" action="/comments/create" method="post">
-             <input type ="text" name = "content" placeholder="Type here to add comments.." required>
-             <input type ="hidden" name ="post" value="<%=post._id %>">
-             <input type ="submit" value="Add comment" >
-         </form>
-         <% } %>  
-         <div class = "post-comments-list">
-             <ul id = "post-comments-<%=post._id%>">
-                 <%for(comment of post.comments){%>
-                    <%- include('_comments') -%> 
-                
-                <%}%>
-             </ul>
-         </div>
-    </div>
+    <details>
+        <summary>All Comments</summary>
+        <div class="post-comments">
+            <% if(locals.user){ %>
+             <form id="post-<%= post._id %>-comments-form" action="/comments/create" method="post">
+                 <input type ="text" name = "content" placeholder="Type here to add comments.." required>
+                 <input type ="hidden" name ="post" value="<%=post._id %>">
+                 <button type ="submit">Comment<i class="fas fa-paper-plane"></i></button>
+             </form>
+             <% } %>  
+             <div class = "post-comments-list">
+                 <ul id = "post-comments-<%=post._id%>">
+                     <%for(comment of post.comments){%>
+                        <%- include('_comments') -%> 
+                    
+                    <%}%>
+                 </ul>
+             </div>
+        </div>
+    </details>
+   
  </li>

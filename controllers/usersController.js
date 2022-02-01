@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
+const Post = require('../models/posts')
 
 
 
@@ -9,7 +10,20 @@ module.exports.profile = async function(req, res){
     try{
         let user = await User.findById(req.params.id);
         let isfriendOrNot = await User.findById(req.user.id);
-    
+        let post = await Post.find({user:req.params.id})
+        .sort('-createdAt')
+        .populate('user')
+        .populate({
+            path:'comments',
+            populate:{
+                path:'user'
+            },
+            populate: {
+                path: 'likes'
+            }
+        }).populate('likes');;
+        
+        // console.log(post);
        const friendOrNot = user.friendships.find((item) => item == req.user.id);
         // if(!req.user.avatar==""){
         //      req.user.avatar =  User.avatarPath+'/'+"user_default.png";
@@ -20,7 +34,9 @@ module.exports.profile = async function(req, res){
                 header:true,
                 footer:true,
                 profile_user:user,
-                friendOrNot: friendOrNot
+                friendOrNot: friendOrNot,
+                homePage:false,
+                posts:post
             })
         });   
     }catch(err){
@@ -38,6 +54,7 @@ module.exports.update = async function (req, res) {
                         console.log('Multer Error',err);
                     user.name = req.body.name;
                     user.email = req.body.email;
+                    user.bio = req.body.bio;
                                    
                     if(req.file)
                     {

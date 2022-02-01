@@ -10,9 +10,17 @@
     
         <div class="auth-links">
             <ul>
-                <% if (locals.user){ %>
                 <li>
-                    <a href="/users/profile/{{locals.user.id}}"><%= user.name %></a>
+                    <a href="/"><i class="fad fa-home-lg-alt"></i></a>
+                </li>
+                <% if (locals.user){ %>
+                    <% if(homePage){ %> 
+                <li id="add-posts-header" >
+                    <a href=""> Add Post &nbsp;<i class="fal fa-plus"></i></a>
+                </li>
+                <% } %> 
+                <li>
+                    <a href="/users/profile/<%= locals.user.id %>"><%= user.name %></a>
                 </li>
                 <li>
                     <a href="/users/sign-out">Sign Out</a>

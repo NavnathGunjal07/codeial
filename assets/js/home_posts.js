@@ -30,31 +30,35 @@
     }
 //method to create a post in DOM
 let newPostDom = function(post){
-    return $(`<li id="post-${post._id}">
+    document.getElementById("add-new-posts-form-home").style.display = "none";
+    return $(`<li class = "home-posts-li" id="post-${post._id}">
     <p>
-    
-         <small>
-             <a class="delete-post-button"  href="/posts/destroy/${ post._id }">X</a>
-         </small>
-
-         ${ post.content }
-     <br>
-     <small>
+    <small>
      ${ post.user.name }
      </small>
+         <small>
+             <a class="delete-post-button"  href="/posts/destroy/${ post._id }">Delete Post</a>
+         </small>
+         <br>
+         ${ post.content }
+     
+     
     </p>
+    <details>
+    <summary>All Comments</summary>
     <div class="post-comments">
         
          <form id="post-${ post._id }-comments-form" action="/comments/create" method="POST">
              <input type="text" name="content" placeholder="Type Here to add comment..." required>
              <input type="hidden" name="post" value="${ post._id }" >
-             <input type="submit" value="Add Comment">
+             <button type ="submit">Comment<i class="fas fa-paper-plane"></i></button>
          </form>
          <div class="post-comments-list">
              <ul id="post-comments-${ post._id }">
              </ul>
          </div>
     </div>
+    </details>
  </li>`)
 }
 
@@ -95,8 +99,20 @@ let convertPostsToAjax = function(){
     });
 }
 
-
-
+// function showAddPostsForm(e){
+//     e.preventDefault();
+//     console.log("hello");
+    
+    
+    
+// }
+document.getElementById("add-posts-header").addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById("add-new-posts-form-home").style.display = "block";
+})
 createPost();
+document.getElementById("add-new-posts-form-home").style.display = "none";
 convertPostsToAjax();
+
 }
+

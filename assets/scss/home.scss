@@ -3,6 +3,23 @@
     height:100%;
    
     // background-color:red;
+    #add-new-posts-form-home{
+        position: fixed;
+        height:50%;
+        border: 1px solid black;
+        width:40%;
+       
+        background-color: lightgreen;
+        margin-left:10%;
+
+        textarea{
+            width:70%;
+            height:80%;
+            margin-top: 5%;
+            margin-left:15%;
+            background-color: lightgrey;
+        }
+    }
     #feed-posts{
         margin-left: 12%;
         width:60%;
@@ -12,6 +29,29 @@
         padding:10px;
         border-left:1px solid grey;
         overflow-y: scroll;
+        #user-profile-pic-posts{
+            height: 6%;
+            width:6%;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-block;
+            background-color:red;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        #posts-list-container li{
+            list-style: none;
+        }
+
+        .home-posts-li{
+            border: 1px solid grey;
+            background-color:#96CEB4;
+            padding:2%; 
+            // padding-top:-20%;
+            margin-bottom: 1%;
+        }
         
     }
     #user-friends-section{
@@ -21,8 +61,31 @@
         flex-direction: column;
         padding:10px;
         // border:1px solid grey;
+       
         .user-freinds{
-            background-color: yellow;
+            height:30%;
+            overflow-y: scroll;
+            padding: 3%;
+            // overflow: hidden;
+            .all-users-section{
+                // display: block;
+                margin-bottom: 1%;
+            }
+            #user-profile-pic{
+                height:20%;
+                width: 10%;
+                display: inline-block;
+                border-radius: 50%;
+                overflow: hidden;
+                background-color:red;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            #user-profile-name-home{
+                display: inline-block;
+            }
         }
         
     }

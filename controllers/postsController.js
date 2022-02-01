@@ -8,12 +8,13 @@ module.exports.create = async function(req, res){
         content: req.body.content,
         user: req.user._id 
     });
+    
    
     if(req.xhr){
         //populating user when post added by ajax
        // console.log(post);
         post = await post.populate('user', 'name');
-
+       
       //post =await Post.findOne({user:req.user._id}).populate('user').exec();
    
         return res.status(200).json({

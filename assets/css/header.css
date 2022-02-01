@@ -15,6 +15,8 @@
     list-style: none; }
     #layout-header nav .auth-links ul li {
       margin-right: 10px; }
+  #layout-header nav .auth-links #add-posts-header:hover {
+    background-color: green; }
   #layout-header nav a {
     color: white;
     text-decoration: none; }

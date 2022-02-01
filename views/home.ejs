@@ -1,14 +1,17 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/chat_box.css">
 
 <div id="home-container">
     <div id="feed-posts">
-        <h4>Posts</h4>
         <% if(locals.user){ %>
-        <form action="/posts/create" id="new-post-form" method="POST">
-            <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
-            <input type="submit" value="Post">
-        </form>
+            <div id = "add-new-posts-form-home">
+                <form  action="/posts/create" id="new-post-form" method="POST">
+                    <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
+                    <button type="submit" name=""> Post <i class="fas fa-paper-plane"></i></button> 
+                </form>
+            </div>
+        
         <% } %>
         <div id="posts-list-container">
             <ul>
@@ -20,22 +23,45 @@
     </div>
     
     <div id="user-friends-section">
+        <div id="user-freinds-title">
+            <h4>Friends list</h4>
+        </div>
         <div class="user-freinds">
-            <h2>Friends list</h2>
-   
+            
+       
             <% for(u of addedfriends) {%>
-                <!-- TODO need to ad in seperate page -->       
-                <a href="/users/profile/<%= u.id %>"><%= u.name %></a> <br>
-                
+                <a href="/users/profile/<%= u.id %>">
+                <div class="all-users-section">
+                <!-- TODO need to ad in seperate page -->   
+                <div id="user-profile-pic">
+                    <img src="<%=u.avatar%>" alt="<%=u.name%>">
+                </div>  
+                <div id="user-profile-name-home"> <%= u.name %></div>
+                  
+            </div>
+        </a>
             <% } %>
+        
+           
+        </div>
+        <div id="user-freinds-title">
+            <h4>All Users</h4>
         </div>
          <div class="user-freinds">
-            <h4>All Users</h4>
-            <% for(u of all_users){%> 
-                    <p>
-                    <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-                </p>
-            <% } %> 
+            
+          
+           
+                <% for(u of all_users){%> 
+                    <a href="/users/profile/<%= u.id %>">
+                    <div class="all-users-section">
+                    <div id="user-profile-pic">
+                        <img src="<%=u.avatar%>" alt="<%=u.name%>">
+                    </div>  
+                    <div id="user-profile-name-home">  <%= u.name %></div>
+                </div></a>
+                <% } %> 
+           
+            
          </div>
    </div>
    <%- include('_chat_box') -%>
@@ -51,10 +77,11 @@
     });
 </script>
 
+<script type = "text/JavaScript" src = " https://MomentJS.com/downloads/moment.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
 <script src="/js/chat_engine.js"></script>
 <% if (locals.user){ %>
 <script>
-    new ChatEngine('user-chat-box', '<%= locals.user.email %>')
+    new ChatEngine('user-chat-box', '<%= locals.user.name %>')
 </script>
 <% } %>

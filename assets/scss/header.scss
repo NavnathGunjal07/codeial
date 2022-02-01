@@ -15,7 +15,7 @@
             }
         }
 
-        .auth-links{
+        .auth-links{   
             ul{
                 margin: 5% 5px;
                 display: flex;
@@ -23,6 +23,10 @@
                 li{
                     margin-right: 10px;
                 }
+            }
+
+            #add-posts-header:hover{
+                background-color: green;
             }
         }
 
