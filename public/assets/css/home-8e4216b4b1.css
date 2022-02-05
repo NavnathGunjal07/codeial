@@ -1,0 +1,65 @@
+#home-container {
+  display: flex;
+  height: 100%; }
+  #home-container #add-new-posts-form-home {
+    position: fixed;
+    height: 50%;
+    border: 1px solid black;
+    width: 40%;
+    background-color: lightgreen;
+    margin-left: 10%; }
+    #home-container #add-new-posts-form-home textarea {
+      width: 70%;
+      height: 80%;
+      margin-top: 5%;
+      margin-left: 15%;
+      background-color: lightgrey; }
+  #home-container #feed-posts {
+    margin-left: 12%;
+    width: 60%;
+    height: 90vh;
+    display: inline-block;
+    padding: 10px;
+    border-left: 1px solid grey;
+    overflow-y: scroll; }
+    #home-container #feed-posts #user-profile-pic-posts {
+      height: 6%;
+      width: 6%;
+      border-radius: 50%;
+      overflow: hidden;
+      display: inline-block;
+      background-color: red; }
+      #home-container #feed-posts #user-profile-pic-posts img {
+        width: 100%;
+        height: 100%; }
+    #home-container #feed-posts #posts-list-container li {
+      list-style: none; }
+    #home-container #feed-posts .home-posts-li {
+      border: 1px solid grey;
+      background-color: #96CEB4;
+      padding: 2%;
+      margin-bottom: 1%; }
+  #home-container #user-friends-section {
+    width: 30%;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; }
+    #home-container #user-friends-section .user-freinds {
+      height: 30%;
+      overflow-y: scroll;
+      padding: 3%; }
+      #home-container #user-friends-section .user-freinds .all-users-section {
+        margin-bottom: 1%; }
+      #home-container #user-friends-section .user-freinds #user-profile-pic {
+        height: 20%;
+        width: 10%;
+        display: inline-block;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: red; }
+        #home-container #user-friends-section .user-freinds #user-profile-pic img {
+          width: 100%;
+          height: 100%; }
+      #home-container #user-friends-section .user-freinds #user-profile-name-home {
+        display: inline-block; }
