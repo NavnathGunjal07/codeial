@@ -1,29 +1,36 @@
 
 <li class = "home-posts-li" id="post-<%= post._id %>">
     <p>
-        <div id="user-profile-pic-posts">
-            <img src="<%=post.user.avatar%>" alt="<%=post.user.name%>">
-        </div>  
-        <small>
-            <%= post.user.name %>
-       </small>
-       <% if (locals.user && locals.user.id == post.user.id){ %> 
-        <small>
-            <a class="delete-post-button"  href="/posts/destroy/<%= post.id %>">Delete Post</a>
-        </small>
-        <% } %>
-        <br>
-       <%= post.content %>
-
-    <small>
-        <% if (locals.user){ %>
-            <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
-                    <%= post.likes.length %> Likes
-            </a>
-        <% }else{ %>
-            <%= post.likes.length %> Likes
-        <% } %>
-    </small>
+        <div>
+            <div id="user-profile-pic-posts">
+                <img src="<%=post.user.avatar%>" alt="<%=post.user.name%>">
+            </div>  
+            <small>
+                <%= post.user.name %>
+           </small>
+           <% if (locals.user && locals.user.id == post.user.id){ %> 
+            <small>
+                <a class="delete-post-button"  href="/posts/destroy/<%= post.id %>">Delete Post</a>
+            </small>
+            <% } %>
+            
+        </div>
+        <div>
+            <%= post.content %>
+        </div>
+      
+        <div>
+            <small>
+                <% if (locals.user){ %>
+                    <a id = "like-dislike-toggle" class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
+                         <%= post.likes.length %> Likes
+                    </a>
+                <% }else{ %>
+                    <i style="color:red;" class="fas fa-heart"></i> <%= post.likes.length %> 
+                <% } %>
+            </small>
+        </div>
+   
     </p>
     <details>
         <summary>All Comments</summary>

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/user_profile.css">
+<link rel="stylesheet" href="<%=assetPath('css/user_profile.css')  %>">
 
 <div id="profile-main-container">
     <div class="user-profile-details">
@@ -75,10 +75,10 @@
     </div>
 </div>
 
-<script src = "/js/home_posts_comments.js"></script>
-<script src="/js/home_posts.js"></script>
+<script src = "<%=assetPath('js/home_posts_comments.js')%>"></script>
+<script src="<%=assetPath('js/home_posts.js')%>"></script>
 <!-- import the script file for toggle likes, also run it over for the already present posts and comments on the page -->
-<script src="js/toggle_likes.js"></script>
+<script src="<%=assetPath('js/toggle_likes.js')  %>"></script>
 <script>
     $('.toggle-like-button').each(function(){
         let self = this;
