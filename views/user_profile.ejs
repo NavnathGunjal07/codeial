@@ -68,6 +68,9 @@
         
     </div>
     <div class="user-profile-user-posts">
+        <% if (posts==null || posts.length==0){ %> 
+            <h3 style ="margin-left:25%;" ><b>This User Has Not Posted Anything Yet...!</b></h3>
+        <% } %> 
         <%for(post of posts){%>
             <%- include('_posts') -%>
         <%}%>

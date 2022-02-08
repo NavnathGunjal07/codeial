@@ -46,7 +46,7 @@ let newPostDom = function(post){
          </small>
          </div>
          <div>
-            <h4><b><%=post.topic %> </b></h4>
+            <h4><b>${post.topic} </b></h4>
         </div>
         <div>${ post.content }</div>
          

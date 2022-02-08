@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
-  background: #2196f3;
+  background: #CA741B;
   color: white;
   box-shadow: 1px 1px 1px 1px lightgrey; }
   #layout-header nav .mini-logo p {
@@ -16,7 +16,7 @@
     #layout-header nav .auth-links ul li {
       margin-right: 10px; }
   #layout-header nav .auth-links #add-posts-header:hover {
-    background-color: green; }
+    border-top: 1px solid black; }
   #layout-header nav a {
     color: white;
     text-decoration: none; }

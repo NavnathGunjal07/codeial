@@ -32,11 +32,10 @@
     overflow-y: scroll; }
     #home-container #feed-posts #user-profile-pic-posts {
       height: 6%;
-      width: 6%;
+      width: 5.2%;
       border-radius: 50%;
       overflow: hidden;
-      display: inline-block;
-      background-color: red; }
+      display: inline-block; }
       #home-container #feed-posts #user-profile-pic-posts img {
         width: 100%;
         height: 100%; }
@@ -56,7 +55,6 @@
       cursor: pointer; }
   #home-container #user-friends-section {
     width: 30%;
-    display: inline-block;
     display: flex;
     color: white;
     flex-direction: column;
