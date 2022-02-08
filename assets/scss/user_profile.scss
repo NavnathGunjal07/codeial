@@ -1,5 +1,6 @@
 body{
-    background-color: lightblue;
+    background-color: #080710;
+    color:white;
     #profile-main-container{
         display: flex;
         flex-direction: column;
@@ -32,13 +33,9 @@ body{
                 justify-content: space-around;
                 width: 60%;
                 #edit-details-popup{
-                    width:30%;
-                    padding:3%;
-                    height:40%;
-                    background-color:lightgrey;
-                    position:fixed;
-                    margin-top:30%;
-                    margin-left: -10%;
+                    
+                    background-color:#080710;
+                    text-align: center;
                     table{
                         border-collapse: separate;
                         border-spacing: 0 1em;
@@ -63,6 +60,27 @@ body{
                             border-radius: 10px solid black;
                         }
                        
+                        .button-12 {
+                          display: flex;
+                          flex-direction: column;
+                          align-items: center;
+                          padding: 6px 14px;
+                          font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+                          border-radius: 6px;
+                          border: none;
+                        
+                          background: #CA741B;
+                          box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+                          color: white;
+                          user-select: none;
+                          -webkit-user-select: none;
+                          touch-action: manipulation;
+                        }
+                        
+                        .button-12:focus {
+                          box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+                          outline: 0;
+                        }
                     }
                 }
                 #bio{
@@ -73,8 +91,10 @@ body{
         }
         .user-profile-user-posts{
             width: 70%;
+            height: 70vh;
             margin-left:20%;
-            border-top:1px solid black;
+            margin-top: 1%;
+            overflow-y: scroll;
             li{
                 list-style: none;
             }
@@ -85,13 +105,21 @@ body{
                 // padding-top:-20%;
                 margin-bottom: 2%;
             }
+            .home-posts-li a{
+                color: #0060B6;
+                text-decoration: none;
+            }
+            .home-posts-li a:hover {
+                color:red; 
+                text-decoration:none; 
+                cursor:pointer;  
+            }
             #user-profile-pic-posts{
                 height: 6%;
-                width:6%;
+                width:4%;
                 border-radius: 50%;
                 overflow: hidden;
                 display: inline-block;
-                background-color:red;
                 img{
                     width: 100%;
                     height: 100%;

@@ -5,17 +5,29 @@ body{
         display:flex;
         flex-direction: column;
     }
+    
     #layout-main{
        height: 100%;
-       margin-top:5%;
        min-height: 90vh;
+       ::-webkit-scrollbar {
+         width: 0;  /* Remove scrollbar space */
+         background: transparent;  /* Optional: just make scrollbar invisible */
+     }
     }
     #footer-container{
        // margin-top:90%;
+       font-size:0.8rem;
     }
     #header-container{
-       position:fixed;
         width: 100%;
+        font-size:0.8rem;
        // display: block;
     }
+}
+
+//media Queries
+@media only screen and (max-width: 600px) {
+   #user-friends-section{
+       display: none;
+   }
 }

@@ -1,23 +1,35 @@
+
 #home-container{
     display:flex;
     height:100%;
-   
+    background-color:#080710;
+    
     // background-color:red;
     #add-new-posts-form-home{
-        position: fixed;
-        height:50%;
+        display: inline-block;
+        text-align: center;
+        padding:1%;
+       color:white;
         border: 1px solid black;
-        width:40%;
        
-        background-color: lightgreen;
+        background-color:#080710;
         margin-left:10%;
-
-        textarea{
-            width:70%;
-            height:80%;
-            margin-top: 5%;
-            margin-left:15%;
+        .topic{
+            display:block;
+            color:white;
+        }
+       input{
             background-color: lightgrey;
+            width:80%;
+        }
+        textarea{
+            background-color: lightgrey;
+            width:80%;
+        }
+        button{
+            display:block;
+            margin-top: 2%;
+            margin-left:45%;
         }
     }
     #feed-posts{
@@ -26,8 +38,7 @@
         height: 90vh;
         // overflow-y: scroll;
         display: inline-block;
-        padding:10px;
-        border-left:1px solid grey;
+        padding:10px; 
         overflow-y: scroll;
         #user-profile-pic-posts{
             height: 6%;
@@ -52,12 +63,23 @@
             // padding-top:-20%;
             margin-bottom: 1%;
         }
+        .home-posts-li a{
+            color: #0060B6;
+            text-decoration: none;
+        }
+        .home-posts-li a:hover {
+            color:red; 
+            text-decoration:none; 
+            cursor:pointer;  
+        }
         
     }
+   
     #user-friends-section{
         width:30%;
         display: inline-block;
         display: flex;
+        color:white;
         flex-direction: column;
         padding:10px;
         // border:1px solid grey;
@@ -77,7 +99,6 @@
                 display: inline-block;
                 border-radius: 50%;
                 overflow: hidden;
-                background-color:red;
                 img{
                     width: 100%;
                     height: 100%;
@@ -89,4 +110,16 @@
         }
         
     }
+
+    #user-friends-section a{
+        color:white;
+        text-decoration:none; 
+        cursor:pointer; 
+    }
+    #user-friends-section a:hover{
+        color: #96CEB4;
+        text-decoration:none; 
+        cursor:pointer; 
+    }
 }
+

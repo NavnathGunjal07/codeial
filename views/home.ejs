@@ -7,7 +7,10 @@
         <% if(locals.user){ %>
             <div id = "add-new-posts-form-home">
                 <form  action="/posts/create" id="new-post-form" method="POST">
-                    <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
+                    <span class="topic">Enter Your Topic/Question Here..!</span>
+                    <input id = "question" type="text" name="topic" placeholder="Topic/Question" >
+                   <span class="topic">Enter Your Content/Description Or Ans Here..!</span> 
+                    <textarea name="content" cols="30" rows="3" placeholder="Add Content/Description..." required></textarea>
                     <button type="submit" name=""> Post <i class="fas fa-paper-plane"></i></button> 
                 </form>
             </div>

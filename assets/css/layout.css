@@ -6,8 +6,18 @@ body {
     flex-direction: column; }
   body #layout-main {
     height: 100%;
-    margin-top: 5%;
     min-height: 90vh; }
+    body #layout-main ::-webkit-scrollbar {
+      width: 0;
+      /* Remove scrollbar space */
+      background: transparent;
+      /* Optional: just make scrollbar invisible */ }
+  body #footer-container {
+    font-size: 0.8rem; }
   body #header-container {
-    position: fixed;
-    width: 100%; }
+    width: 100%;
+    font-size: 0.8rem; }
+
+@media only screen and (max-width: 600px) {
+  #user-friends-section {
+    display: none; } }

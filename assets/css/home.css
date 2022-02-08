@@ -1,26 +1,34 @@
 #home-container {
   display: flex;
-  height: 100%; }
+  height: 100%;
+  background-color: #080710; }
   #home-container #add-new-posts-form-home {
-    position: fixed;
-    height: 50%;
+    display: inline-block;
+    text-align: center;
+    padding: 1%;
+    color: white;
     border: 1px solid black;
-    width: 40%;
-    background-color: lightgreen;
+    background-color: #080710;
     margin-left: 10%; }
+    #home-container #add-new-posts-form-home .topic {
+      display: block;
+      color: white; }
+    #home-container #add-new-posts-form-home input {
+      background-color: lightgrey;
+      width: 80%; }
     #home-container #add-new-posts-form-home textarea {
-      width: 70%;
-      height: 80%;
-      margin-top: 5%;
-      margin-left: 15%;
-      background-color: lightgrey; }
+      background-color: lightgrey;
+      width: 80%; }
+    #home-container #add-new-posts-form-home button {
+      display: block;
+      margin-top: 2%;
+      margin-left: 45%; }
   #home-container #feed-posts {
     margin-left: 12%;
     width: 60%;
     height: 90vh;
     display: inline-block;
     padding: 10px;
-    border-left: 1px solid grey;
     overflow-y: scroll; }
     #home-container #feed-posts #user-profile-pic-posts {
       height: 6%;
@@ -39,10 +47,18 @@
       background-color: #96CEB4;
       padding: 2%;
       margin-bottom: 1%; }
+    #home-container #feed-posts .home-posts-li a {
+      color: #0060B6;
+      text-decoration: none; }
+    #home-container #feed-posts .home-posts-li a:hover {
+      color: red;
+      text-decoration: none;
+      cursor: pointer; }
   #home-container #user-friends-section {
     width: 30%;
     display: inline-block;
     display: flex;
+    color: white;
     flex-direction: column;
     padding: 10px; }
     #home-container #user-friends-section .user-freinds {
@@ -56,10 +72,17 @@
         width: 10%;
         display: inline-block;
         border-radius: 50%;
-        overflow: hidden;
-        background-color: red; }
+        overflow: hidden; }
         #home-container #user-friends-section .user-freinds #user-profile-pic img {
           width: 100%;
           height: 100%; }
       #home-container #user-friends-section .user-freinds #user-profile-name-home {
         display: inline-block; }
+  #home-container #user-friends-section a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer; }
+  #home-container #user-friends-section a:hover {
+    color: #96CEB4;
+    text-decoration: none;
+    cursor: pointer; }

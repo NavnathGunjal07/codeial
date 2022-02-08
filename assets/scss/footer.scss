@@ -5,14 +5,18 @@
         text-decoration: none;
     }
 
-    background: grey;
+    background: #CA741B;
     padding: 5px 10px;
     display: flex;
     justify-content: flex-start;
 
     .footer-nav{
         ul{
+            display: flex;
             list-style: none;
+        }
+        li{
+            margin-right: 10px;
         }
     }
 }

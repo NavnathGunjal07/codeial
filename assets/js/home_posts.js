@@ -33,14 +33,23 @@ let newPostDom = function(post){
     document.getElementById("add-new-posts-form-home").style.display = "none";
     return $(`<li class = "home-posts-li" id="post-${post._id}">
     <p>
-    <small>
-     ${ post.user.name }
-     </small>
+         <div>
+            <div id="user-profile-pic-posts">
+                <img src="${post.user.avatar}" alt="${post.user.name}">
+            </div>  
+            <small>
+                ${post.user.name}
+           </small>
+
          <small>
-             <a class="delete-post-button"  href="/posts/destroy/${ post._id }">Delete Post</a>
+             <a style="margin-left:60%;"class="delete-post-button"  href="/posts/destroy/${ post._id }">Delete Post</a>
          </small>
-         <br>
-         ${ post.content }
+         </div>
+         <div>
+            <h4><b><%=post.topic %> </b></h4>
+        </div>
+        <div>${ post.content }</div>
+         
      
      
     </p>

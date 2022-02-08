@@ -6,6 +6,7 @@ module.exports.create = async function(req, res){
   try{
     let post = await Post.create({
         content: req.body.content,
+        topic:req.body.topic,
         user: req.user._id 
     });
     
