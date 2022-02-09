@@ -26,8 +26,24 @@ body{
 }
 
 //media Queries
-@media only screen and (min-width: 768px){
+@media only screen and (max-width: 600px){
     #user-friends-section{
         display: none!important;
     }
+    #feed-posts{
+        width:100%;
+        #user-profile-pic-posts{
+            height: 3%;
+            width:4%;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-block;
+        
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+   
 }
