@@ -68,7 +68,7 @@ app.use(session({
     cookie: {
         maxAge: (1000 * 60 * 100)
     },
-    store: MongoStore.create({ mongoUrl: 'mongodb://localhost/codieal_devlopment' })
+    store: MongoStore.create({ mongoUrl: 'mongodb+srv://NavnathGunjal:sidharthgunjal@cluster0.fdrcp.mongodb.net/codieal_devlopment' })
 }));
 
 app.use(passport.initialize());
